@@ -1303,6 +1303,7 @@ object Form1: TForm1
     Height = 41
     Caption = 'G'#304'R'#304#350' '
     TabOrder = 2
+    OnClick = Button1Click
   end
   object CheckBox1: TCheckBox
     Left = 584

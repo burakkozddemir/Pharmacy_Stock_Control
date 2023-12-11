@@ -21,6 +21,7 @@ type
     procedure Label2Click(Sender: TObject);
     procedure Label3Click(Sender: TObject);
     procedure Image1Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,8 +32,21 @@ var
   Form1: TForm1;
 
 implementation
-
+uses unit2;
+var
+gec:Boolean=true;
+gecme:boolean=false;
 {$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+if gec=True then
+    begin
+        form2.Show;
+        form1.Hide;
+    end;
+
+end;
 
 procedure TForm1.CheckBox1Click(Sender: TObject);
 begin
