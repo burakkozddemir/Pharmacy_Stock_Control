@@ -1276,7 +1276,7 @@ object Form2: TForm2
     Top = 192
     Width = 113
     Height = 29
-    Caption = 'Button3'
+    Caption = #220'R'#220'N EKLE'
     TabOrder = 2
   end
   object Button4: TButton
@@ -1284,7 +1284,7 @@ object Form2: TForm2
     Top = 248
     Width = 113
     Height = 33
-    Caption = 'Button4'
+    Caption = #220'R'#220'N S'#304'L'
     TabOrder = 3
   end
   object Button5: TButton
@@ -1292,7 +1292,7 @@ object Form2: TForm2
     Top = 304
     Width = 113
     Height = 33
-    Caption = 'Button5'
+    Caption = 'STOK KONTROL'
     TabOrder = 4
   end
   object Button6: TButton
@@ -1300,7 +1300,7 @@ object Form2: TForm2
     Top = 360
     Width = 113
     Height = 33
-    Caption = 'Button6'
+    Caption = #304'STAT'#304'ST'#304'KLER'
     TabOrder = 5
   end
 end

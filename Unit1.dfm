@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 339
   Top = 164
   Caption = 'G'#304'R'#304#350' YAPINIZ'
-  ClientHeight = 570
-  ClientWidth = 1089
+  ClientHeight = 562
+  ClientWidth = 1083
   Color = clBtnFace
   TransparentColorValue = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -147,6 +147,7 @@ object Form1: TForm1
     0000000000000000000000000000000000000000000000000000000000000000
     000000000000000000000000000000000000000000000000000000000000}
   Position = poDesigned
+  OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
     Left = 312
@@ -179,7 +180,7 @@ object Form1: TForm1
   end
   object Label3: TLabel
     Left = 496
-    Top = 547
+    Top = 538
     Width = 116
     Height = 15
     Caption = 'Burak '#214'zdemir '#169'2023'
@@ -188,7 +189,7 @@ object Form1: TForm1
   object Image1: TImage
     Left = 496
     Top = 8
-    Width = 104
+    Width = 105
     Height = 98
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000001F40000
@@ -1283,7 +1284,7 @@ object Form1: TForm1
     Left = 448
     Top = 232
     Width = 201
-    Height = 25
+    Height = 23
     TabOrder = 0
     TextHint = 'KULLANICI ADI G'#304'R'#304'N'#304'Z'
   end
@@ -1313,5 +1314,33 @@ object Form1: TForm1
     Caption = 'G'#246'ster'
     TabOrder = 3
     OnClick = CheckBox1Click
+  end
+  object ADOConnection1: TADOConnection
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Us' +
+      'ers\burak\OneDrive\Masa'#252'st'#252'\ECZA DEPOSU STOK KONTROL PROGRAMI\Wi' +
+      'n32\Debug\psc1.mdb;Mode=ReadWrite;Persist Security Info=False;Je' +
+      't OLEDB:System database="";Jet OLEDB:Registry Path="";Jet OLEDB:' +
+      'Database Password="";Jet OLEDB:Engine Type=5;Jet OLEDB:Database ' +
+      'Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;Jet OLEDB:Glo' +
+      'bal Bulk Transactions=1;Jet OLEDB:New Database Password="";Jet O' +
+      'LEDB:Create System Database=False;Jet OLEDB:Encrypt Database=Fal' +
+      'se;Jet OLEDB:Don'#39't Copy Locale on Compact=False;Jet OLEDB:Compac' +
+      't Without Replica Repair=False;Jet OLEDB:SFP=False'
+    LoginPrompt = False
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 64
+    Top = 440
+  end
+  object ADOTable1: TADOTable
+    Connection = ADOConnection1
+    TableName = 'Giri'#351
+    Left = 64
+    Top = 352
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 64
+    Top = 272
   end
 end
