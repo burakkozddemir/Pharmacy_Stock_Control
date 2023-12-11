@@ -1,0 +1,56 @@
+unit Unit4;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Data.DB, Data.Win.ADODB;
+
+type
+  TForm4 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Image1: TImage;
+    Button1: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    ADOConnection1: TADOConnection;
+    ADOTable1: TADOTable;
+    DataSource1: TDataSource;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+var
+urunadi:string;
+miktar,fiyat,tutar:integer;
+
+{$R *.dfm}
+
+procedure TForm4.Button1Click(Sender: TObject);
+begin
+miktar:=strtoint(edit2.text);
+fiyat:=strtoint(edit3.text);
+tutar:=miktar*fiyat;
+label1.Caption:='Tutar : '+inttostr(tutar);
+showmessage('Ürün Baþarýyla Eklendi ! ');
+end;
+
+procedure TForm4.FormCreate(Sender: TObject);
+begin
+ADOTable1.Open;
+end;
+
+end.

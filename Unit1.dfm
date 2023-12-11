@@ -1,10 +1,10 @@
 object Form1: TForm1
-  Left = 339
-  Top = 164
+  Left = 371
+  Top = 229
   Caption = 'G'#304'R'#304#350' YAPINIZ'
-  ClientHeight = 562
-  ClientWidth = 1083
-  Color = clBtnFace
+  ClientHeight = 578
+  ClientWidth = 1073
+  Color = clWhite
   TransparentColorValue = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -164,7 +164,7 @@ object Form1: TForm1
   end
   object Label2: TLabel
     Left = 448
-    Top = 317
+    Top = 304
     Width = 90
     Height = 15
     Caption = #350'ifremi unuttum '
@@ -179,7 +179,7 @@ object Form1: TForm1
     OnClick = Label2Click
   end
   object Label3: TLabel
-    Left = 496
+    Left = 482
     Top = 538
     Width = 116
     Height = 15
@@ -187,7 +187,7 @@ object Form1: TForm1
     OnClick = Label3Click
   end
   object Image1: TImage
-    Left = 496
+    Left = 493
     Top = 8
     Width = 105
     Height = 98
@@ -1298,7 +1298,7 @@ object Form1: TForm1
     TextHint = #350#304'FRE G'#304'R'#304'N'#304'Z'
   end
   object Button1: TButton
-    Left = 496
+    Left = 493
     Top = 360
     Width = 105
     Height = 41
@@ -1308,7 +1308,7 @@ object Form1: TForm1
   end
   object CheckBox1: TCheckBox
     Left = 584
-    Top = 317
+    Top = 304
     Width = 65
     Height = 17
     Caption = 'G'#246'ster'
@@ -1316,6 +1316,7 @@ object Form1: TForm1
     OnClick = CheckBox1Click
   end
   object ADOConnection1: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Us' +
       'ers\burak\OneDrive\Masa'#252'st'#252'\ECZA DEPOSU STOK KONTROL PROGRAMI\Wi' +
@@ -1328,19 +1329,34 @@ object Form1: TForm1
       'se;Jet OLEDB:Don'#39't Copy Locale on Compact=False;Jet OLEDB:Compac' +
       't Without Replica Repair=False;Jet OLEDB:SFP=False'
     LoginPrompt = False
+    Mode = cmReadWrite
     Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 64
-    Top = 440
+    Left = 72
+    Top = 302
   end
   object ADOTable1: TADOTable
+    Active = True
     Connection = ADOConnection1
+    CursorType = ctStatic
     TableName = 'Giri'#351
-    Left = 64
-    Top = 352
+    Left = 72
+    Top = 192
+    object ADOTable1K_A: TWideStringField
+      FieldName = 'K_A'
+      Size = 255
+    end
+    object ADOTable1Kimlik: TAutoIncField
+      FieldName = 'Kimlik'
+      ReadOnly = True
+    end
+    object ADOTable1K_S: TWideStringField
+      FieldName = 'K_S'
+      Size = 255
+    end
   end
   object DataSource1: TDataSource
     DataSet = ADOTable1
-    Left = 64
-    Top = 272
+    Left = 72
+    Top = 92
   end
 end

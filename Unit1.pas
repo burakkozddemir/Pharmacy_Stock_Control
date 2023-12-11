@@ -21,6 +21,9 @@ type
     ADOConnection1: TADOConnection;
     ADOTable1: TADOTable;
     DataSource1: TDataSource;
+    ADOTable1K_A: TWideStringField;
+    ADOTable1Kimlik: TAutoIncField;
+    ADOTable1K_S: TWideStringField;
     procedure CheckBox1Click(Sender: TObject);
     procedure Label2Click(Sender: TObject);
     procedure Label3Click(Sender: TObject);
@@ -38,7 +41,7 @@ var
   Form1: TForm1;
 
 implementation
-uses unit2;
+uses unit2,unit3;
 var
 gec:Boolean=true;
 gecme:boolean=false;
@@ -58,17 +61,19 @@ kullanicisifre:=edit2.text;
  begin
  if adotable1['K_S']=kullanicisifre then
  begin
-form2.Show;
-form1.Hide;
+ //form2.Show;
+ form3.show;
+ form1.Hide;
+ end
+  else
+ begin
+  showmessage('Kullanýcý bulunamadý tekrar deneyin !!!') ;
+ end;
  end
  else
  begin
-   showmessage('kullanýcý bulunamadý tekrar deneyin')
+   showmessage('Kullanýcý bulunamadý tekrar deneyin !!!') ;
  end;
-
-
- end;
-
 
 //if 1=1 then
 //begin

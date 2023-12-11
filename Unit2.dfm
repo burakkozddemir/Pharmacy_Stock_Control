@@ -1,10 +1,10 @@
 object Form2: TForm2
-  Left = 371
-  Top = 213
+  Left = 468
+  Top = 245
   BorderStyle = bsNone
   Caption = 'PSC -PHARMACY STOCK CONTROL-'
   ClientHeight = 561
-  ClientWidth = 921
+  ClientWidth = 652
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -146,11 +146,11 @@ object Form2: TForm2
     0000000000000000000000000000000000000000000000000000000000000000
     0000000000000000000000000000000000000000000000000000000000000000
     000000000000000000000000000000000000000000000000000000000000}
-  Position = poDesigned
+  Position = poScreenCenter
   TextHeight = 15
   object Image1: TImage
-    Left = 656
-    Top = 312
+    Left = 392
+    Top = 304
     Width = 265
     Height = 249
     Picture.Data = {
@@ -1242,7 +1242,7 @@ object Form2: TForm2
     Stretch = True
   end
   object Button1: TButton
-    Left = 808
+    Left = 544
     Top = 0
     Width = 113
     Height = 33
@@ -1257,7 +1257,7 @@ object Form2: TForm2
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 776
+    Left = 512
     Top = -2
     Width = 34
     Height = 35
@@ -1272,35 +1272,28 @@ object Form2: TForm2
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 168
-    Top = 192
+    Left = 88
+    Top = 152
     Width = 113
     Height = 29
-    Caption = #220'R'#220'N EKLE'
+    Caption = #220'R'#220'N EKLE/S'#304'L'
     TabOrder = 2
-  end
-  object Button4: TButton
-    Left = 168
-    Top = 248
-    Width = 113
-    Height = 33
-    Caption = #220'R'#220'N S'#304'L'
-    TabOrder = 3
+    OnClick = Button3Click
   end
   object Button5: TButton
-    Left = 168
-    Top = 304
+    Left = 88
+    Top = 208
     Width = 113
     Height = 33
     Caption = 'STOK KONTROL'
-    TabOrder = 4
+    TabOrder = 3
   end
   object Button6: TButton
-    Left = 168
-    Top = 360
+    Left = 88
+    Top = 272
     Width = 113
     Height = 33
     Caption = #304'STAT'#304'ST'#304'KLER'
-    TabOrder = 5
+    TabOrder = 4
   end
 end
