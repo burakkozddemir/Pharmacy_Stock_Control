@@ -1,0 +1,45 @@
+unit Unit5;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.Win.ADODB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.StdCtrls;
+
+type
+  TForm5 = class(TForm)
+    ADOConnection1: TADOConnection;
+    ADOTable1: TADOTable;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    ADOTable1id: TAutoIncField;
+    ADOTable1urun_adi: TWideStringField;
+    ADOTable1miktar: TIntegerField;
+    ADOTable1fiyat: TIntegerField;
+    ADOTable1tutar: TIntegerField;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form5: TForm5;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm5.FormCreate(Sender: TObject);
+begin
+
+edit1.Text:=ADOTable1id.Text;
+end;
+
+end.

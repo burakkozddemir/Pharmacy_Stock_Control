@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 371
   Top = 229
   Caption = 'G'#304'R'#304#350' YAPINIZ'
-  ClientHeight = 578
-  ClientWidth = 1073
+  ClientHeight = 569
+  ClientWidth = 1067
   Color = clWhite
   TransparentColorValue = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -146,7 +146,7 @@ object Form1: TForm1
     0000000000000000000000000000000000000000000000000000000000000000
     0000000000000000000000000000000000000000000000000000000000000000
     000000000000000000000000000000000000000000000000000000000000}
-  Position = poDesigned
+  Position = poScreenCenter
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel

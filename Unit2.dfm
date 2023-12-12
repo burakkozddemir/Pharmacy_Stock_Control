@@ -1281,12 +1281,13 @@ object Form2: TForm2
     OnClick = Button3Click
   end
   object Button5: TButton
-    Left = 88
+    Left = 24
     Top = 208
-    Width = 113
+    Width = 249
     Height = 33
-    Caption = 'STOK KONTROL'
+    Caption = 'STOK KONTROL(sadece g'#246'r'#252'nt'#252'leme)'
     TabOrder = 3
+    OnClick = Button5Click
   end
   object Button6: TButton
     Left = 88

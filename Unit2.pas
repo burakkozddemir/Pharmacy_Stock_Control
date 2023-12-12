@@ -18,6 +18,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,7 +29,7 @@ var
   Form2: TForm2;
 
 implementation
-uses unit1,unit4;
+uses unit1,unit4,unit5;
 {$R *.dfm}
 
 procedure TForm2.Button1Click(Sender: TObject);
@@ -44,6 +45,11 @@ end;
 procedure TForm2.Button3Click(Sender: TObject);
 begin
 form4.show;
+end;
+
+procedure TForm2.Button5Click(Sender: TObject);
+begin
+form5.Show;
 end;
 
 end.

@@ -1,13 +1,13 @@
 object Form3: TForm3
-  Left = 0
-  Top = 0
+  Left = 565
+  Top = 540
   AlphaBlendValue = 200
   BiDiMode = bdRightToLeftReadingOnly
   BorderIcons = []
   BorderStyle = bsNone
   Caption = 'Form3'
-  ClientHeight = 157
-  ClientWidth = 730
+  ClientHeight = 126
+  ClientWidth = 729
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,6 +23,7 @@ object Form3: TForm3
     Top = 75
     Width = 375
     Height = 25
+    AutoSize = False
     Caption = 'DATABASE Y'#220'KLEN'#304'YOR L'#220'TFEN BEKLEY'#304'N.'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -44,15 +45,15 @@ object Form3: TForm3
     ParentFont = False
   end
   object ProgressBar1: TProgressBar
-    Left = 56
+    Left = 24
     Top = 40
-    Width = 593
+    Width = 681
     Height = 29
     TabOrder = 0
   end
   object Timer1: TTimer
     Enabled = False
-    Interval = 300
+    Interval = 190
     OnTimer = Timer1Timer
     Left = 48
     Top = 88
