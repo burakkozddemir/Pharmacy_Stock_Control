@@ -36,6 +36,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -90,6 +91,15 @@ procedure TForm5.Button5Click(Sender: TObject);
 begin
 adotable1.last;
 
+edit1.Text:=ADOTable1id.Text;
+edit2.Text:=ADOTable1urun_adi.Text;
+edit3.Text:=ADOTable1miktar.Text;
+edit4.Text:=ADOTable1fiyat.Text;
+
+end;
+
+procedure TForm5.DBGrid1CellClick(Column: TColumn);
+begin
 edit1.Text:=ADOTable1id.Text;
 edit2.Text:=ADOTable1urun_adi.Text;
 edit3.Text:=ADOTable1miktar.Text;

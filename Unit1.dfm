@@ -1,9 +1,9 @@
-object Form1: TForm1
+﻿object Form1: TForm1
   Left = 371
   Top = 229
   Caption = 'G'#304'R'#304#350' YAPINIZ'
-  ClientHeight = 569
-  ClientWidth = 1067
+  ClientHeight = 542
+  ClientWidth = 1049
   Color = clWhite
   TransparentColorValue = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -1315,6 +1315,15 @@ object Form1: TForm1
     TabOrder = 3
     OnClick = CheckBox1Click
   end
+  object Button2: TButton
+    Left = 493
+    Top = 416
+    Width = 105
+    Height = 25
+    Caption = 'KAYDOL'
+    TabOrder = 4
+    OnClick = Button2Click
+  end
   object ADOConnection1: TADOConnection
     Connected = True
     ConnectionString = 
@@ -1341,16 +1350,32 @@ object Form1: TForm1
     TableName = 'Giri'#351
     Left = 72
     Top = 192
-    object ADOTable1K_A: TWideStringField
-      FieldName = 'K_A'
-      Size = 255
-    end
     object ADOTable1Kimlik: TAutoIncField
       FieldName = 'Kimlik'
       ReadOnly = True
     end
+    object ADOTable1K_A: TWideStringField
+      FieldName = 'K_A'
+      Size = 255
+    end
     object ADOTable1K_S: TWideStringField
       FieldName = 'K_S'
+      Size = 255
+    end
+    object ADOTable1İSİM: TWideStringField
+      FieldName = #304'S'#304'M'
+      Size = 255
+    end
+    object ADOTable1SOY: TWideStringField
+      FieldName = 'SOY'
+      Size = 255
+    end
+    object ADOTable1EMAİL: TWideStringField
+      FieldName = 'EMA'#304'L'
+      Size = 255
+    end
+    object ADOTable1tel: TWideStringField
+      FieldName = 'tel'
       Size = 255
     end
   end

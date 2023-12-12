@@ -2,7 +2,7 @@ object Form4: TForm4
   Left = 0
   Top = 0
   Caption = #220'r'#252'n Ekle'
-  ClientHeight = 516
+  ClientHeight = 525
   ClientWidth = 878
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -1307,6 +1307,7 @@ object Form4: TForm4
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
   end
   object Button2: TButton
     Left = 144
@@ -1316,6 +1317,14 @@ object Form4: TForm4
     Caption = #220'r'#252'n Sil'
     TabOrder = 5
     OnClick = Button2Click
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 496
+    Top = 505
+    Width = 240
+    Height = 25
+    DataSource = DataSource1
+    TabOrder = 6
   end
   object ADOConnection1: TADOConnection
     Connected = True
@@ -1334,16 +1343,16 @@ object Form4: TForm4
     LoginPrompt = False
     Mode = cmReadWrite
     Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 20
-    Top = 402
+    Left = 9
+    Top = 439
   end
   object ADOTable1: TADOTable
     Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'ilaclar'
-    Left = 68
-    Top = 384
+    Left = 69
+    Top = 416
     object ADOTable1id: TAutoIncField
       DisplayWidth = 10
       FieldName = 'id'

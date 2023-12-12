@@ -3,7 +3,7 @@ object Form5: TForm5
   Top = 180
   Caption = 'Stok Kontrol'
   ClientHeight = 665
-  ClientWidth = 1052
+  ClientWidth = 1113
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -190,6 +190,7 @@ object Form5: TForm5
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
   end
   object Edit1: TEdit
     Left = 768

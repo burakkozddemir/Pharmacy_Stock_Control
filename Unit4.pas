@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
-  Vcl.StdCtrls, Data.DB, Data.Win.ADODB, Vcl.Grids, Vcl.DBGrids;
+  Vcl.StdCtrls, Data.DB, Data.Win.ADODB, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls;
 
 type
   TForm4 = class(TForm)
@@ -26,9 +26,11 @@ type
     ADOTable1fiyat: TIntegerField;
     DBGrid1: TDBGrid;
     Button2: TButton;
+    DBNavigator1: TDBNavigator;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -48,7 +50,12 @@ var
   miktar, fiyat: Integer;
 begin
   miktar := StrToInt(Edit2.Text);
-  fiyat := StrToInt(Edit3.Text);
+
+  // Kontrol edilerek fiyatýn girilip girilmediði belirlenir
+  if Trim(Edit3.Text) = '' then
+    fiyat := ADOTable1.FieldByName('fiyat').AsInteger
+  else
+    fiyat := StrToInt(Edit3.Text);
 
   existingIndex := -1;
   if ADOTable1.Locate('urun_adi', Edit1.Text, [loCaseInsensitive]) then
@@ -76,6 +83,7 @@ begin
 end;
 
 
+
 procedure TForm4.Button2Click(Sender: TObject);
 begin
   if not ADOTable1.IsEmpty then
@@ -84,6 +92,14 @@ begin
     ShowMessage('Ürün baþarýyla silindi.');
   end;
 end;
+
+
+procedure TForm4.DBGrid1CellClick(Column: TColumn);
+begin
+  if not ADOTable1.IsEmpty then
+    Edit1.Text := ADOTable1.FieldByName('urun_adi').AsString;
+end;
+
 
 
 procedure TForm4.FormCreate(Sender: TObject);
