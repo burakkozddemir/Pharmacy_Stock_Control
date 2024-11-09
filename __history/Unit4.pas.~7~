@@ -1,0 +1,102 @@
+unit Unit4;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Data.DB, Data.Win.ADODB, Web.HTTPApp, Web.DBWeb, Vcl.Grids,
+  Vcl.DBGrids;
+
+type
+  TForm4 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Image1: TImage;
+    Button1: TButton;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    ADOConnection1: TADOConnection;
+    ADOTable1: TADOTable;
+    DataSource1: TDataSource;
+    ADOTable1id: TAutoIncField;
+    ADOTable1urun_adi: TWideStringField;
+    ADOTable1miktar: TIntegerField;
+    ADOTable1fiyat: TIntegerField;
+    DBGrid1: TDBGrid;
+    Button2: TButton;
+    Button3: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+
+var
+  urunadi: string;
+  miktar, fiyat, tutar: integer;
+
+{$R *.dfm}
+
+
+procedure TForm4.Button1Click(Sender: TObject);
+var
+  existingIndex: Integer;
+begin
+  miktar := StrToInt(Edit2.Text);
+  fiyat := StrToInt(Edit3.Text);
+  tutar := miktar * fiyat;
+
+  existingIndex := -1;
+  if ADOTable1.Locate('urun_adi', edit1.Text, [loCaseInsensitive]) then
+    existingIndex := ADOTable1.RecNo - 1;
+
+  if existingIndex > -1 then
+  begin
+    // Mevcut ürün varsa miktarýný ve toplam tutarýný güncelle
+    ADOTable1.RecNo := existingIndex + 1;
+    ADOTable1miktar.Value := ADOTable1miktar.Value + StrToInt(edit2.Text);
+  end
+  else
+  begin
+    // Mevcut ürün yoksa yeni ürün olarak ekle
+    ADOTable1.Append;
+    ADOTable1urun_adi.Text := edit1.Text;
+    ADOTable1miktar.Value := StrToInt(edit2.Text);
+    ADOTable1fiyat.Value := StrToInt(edit3.Text);
+    ADOTable1.Post;
+  end;
+
+  ShowMessage('Ürün Baþarýyla Eklendi veya Güncellendi!');
+end;
+
+procedure TForm4.Button2Click(Sender: TObject);
+
+begin
+  if not ADOTable1.IsEmpty then
+  begin
+
+      ADOTable1.Delete;
+      ShowMessage('Ürün baþarýyla silindi.');
+end;
+
+
+
+end;
+
+
+end.
+
+
+
